@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraser Valley Plumbing | Trusted Residential & Commercial Plumbers</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #0b2545; /* Deep Navy from Logo */
+            --secondary-color: #134074;
+            --accent-color: #00b4d8; /* Water Blue accent */
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-area h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(11, 37, 69, 0.95), rgba(19, 64, 116, 0.95));
+            color: var(--text-light);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #0096c7;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 65px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .service-areas {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Pure CSS / Vector Service Visual Header */
+        .service-visual {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-color);
+        }
+
+        .service-visual i {
+            font-size: 4rem;
+        }
+
+        .service-card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .service-card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .service-card-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* REVIEWS SECTION */
+        .reviews-bg {
+            background-color: var(--bg-light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .stars {
+            color: #ffb703;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* FAQ SECTION */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: #444;
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* FLOATING ACTION BUTTONS */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2000;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-phone { background-color: #0077b6; }
+        .float-wa { background-color: #25d366; }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .about-container { flex-direction: column; }
+            .hero h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="fraservalleyplumbing-logo.png" alt="Fraser Valley Plumbing Logo" onerror="this.style.display='none'">
+                <h1>Fraser Valley Plumbing</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div id="home" class="hero">
+        <div class="hero-content">
+            <h2>Reliable Residential & Commercial Plumbing Solutions</h2>
+            <p>Your trusted professional plumbers serving throughout the Fraser Valley, BC. From emergency plumbing to routine upgrades, we have you covered.</p>
+            <a href="tel:+16722730434" class="cta-btn"><i class="fa fa-phone"></i> Call Now: +1 (672) 273-0434</a>
+        </div>
+    </div>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p><strong>Fraser Valley Plumbing</strong> is a trusted plumbing company based in Fraser Valley, BC. Our experienced plumbers deliver quality workmanship, fast response times, and long-lasting solutions for all repairs, installations, and preventative maintenance jobs.</p>
+                <p>Whether you are dealing with an unexpected emergency, seeking a complete upgrade, or need a complex camera diagnostic inspection, our dedicated team is unconditionally committed to exceptional service and complete customer satisfaction.</p>
+                <p class="service-areas">Proudly Serving: Surrey, Abbotsford, Chilliwack, Cloverdale, Delta, Hope, Langley, Maple Ridge, and Port Coquitlam.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+
+            <!-- Service 1: Plumbing Services -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-faucet-drip"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Plumbing Services</h3>
+                    <p>Comprehensive layout diagnostics, basic repairs, structural pipe installations, and tailored fixes for residential and corporate systems.</p>
+                </div>
+            </div>
+
+            <!-- Service 2: Emergency Plumbing -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Emergency Plumbing</h3>
+                    <p>Fast, reliable emergency response unit active round-the-clock to manage devastating bursts, severe overflows, and structural failures.</p>
+                </div>
+            </div>
+
+            <!-- Service 3: Leak Detection -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-droplet-slash"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Leak Detection</h3>
+                    <p>Advanced electronic diagnostics pinpoint hidden slab and wall leaks efficiently before structural decay escalates.</p>
+                </div>
+            </div>
+
+            <!-- Service 4: Bathroom Plumbing -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-shower"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Bathroom Plumbing</h3>
+                    <p>Expert installations and swift fixes for custom vanity faucets, toilet setups, shower modules, and tub mechanisms.</p>
+                </div>
+            </div>
+
+            <!-- Service 5: Kitchen Plumbing -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-sink"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Kitchen Plumbing</h3>
+                    <p>Upgrades and service for sinks, modern garbage disposals, dishwashers, and specialized water filtration lines.</p>
+                </div>
+            </div>
+
+            <!-- Service 6: Camera Inspection -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Camera Inspection</h3>
+                    <p>High-definition fiber-optic video evaluation to safely diagnose subterranean blockage layouts and pipeline cracks.</p>
+                </div>
+            </div>
+
+            <!-- Service 7: Drain Cleaning & Drainage -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-soap"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Drain Cleaning & Drainage</h3>
+                    <p>Clearing slow perimeter drains, stubborn blockages, and main stack pipelines with high-velocity hydro-jet methods.</p>
+                </div>
+            </div>
+
+            <!-- Service 8: Water Line Repair -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Water Line Repair</h3>
+                    <p>Trenchless or targeted structural excavations addressing broken underground water utility link supplies directly.</p>
+                </div>
+            </div>
+
+            <!-- Service 9: Sewer Line Services -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-trowel-bricks"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Sewer Line Services</h3>
+                    <p>Comprehensive root extraction, structural re-lining, and complete replacements of compromised sewer mains.</p>
+                </div>
+            </div>
+
+            <!-- Service 10: Gas Fitting -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Gas Fitting</h3>
+                    <p>Certified installation, safety pressure testing, and professional management of gas line appliances and range hooks.</p>
+                </div>
+            </div>
+
+            <!-- Service 11: Heating Services -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-temperature-high"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Heating Services</h3>
+                    <p>Boiler tune-ups, forced-air furnace repairs, and energy-efficient heat pump optimization routines.</p>
+                </div>
+            </div>
+
+            <!-- Service 12: Cooling Services -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Cooling Services</h3>
+                    <p>Central air conditioner unit servicing, mini-split air systems installations, and cooling liquid balancing.</p>
+                </div>
+            </div>
+
+            <!-- Service 13: Plumbing Maintenance -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Plumbing Maintenance</h3>
+                    <p>Scheduled commercial and residential system flushes, pressure regulator valves testing, and preventative audits.</p>
+                </div>
+            </div>
+
+            <!-- Service 14: Residential Plumbing -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Residential Plumbing</h3>
+                    <p>Dedicated single and multi-family house diagnostics, updates, safety builds, and appliance integrations.</p>
+                </div>
+            </div>
+
+            <!-- Service 15: Commercial Plumbing -->
+            <div class="service-card">
+                <div class="service-visual">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3>Commercial Plumbing</h3>
+                    <p>Heavy-duty corporate facilities backflow testing, grease trap logistics, and massive water loop designs.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews-bg">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p>"Fast emergency response when our main drain line backed up in Abbotsford. Truly saved our basement!"</p>
+                <div class="review-author">- Sarah M., Abbotsford</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p>"Professional crew handled our complete kitchen plumbing upgrade in Langley perfectly. High quality craftsmanship."</p>
+                <div class="review-author">- David K., Langley</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p>"They found a hidden slab leak in our commercial building using their camera system. Extremely professional."</p>
+                <div class="review-author">- John D., Surrey</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQS SECTION -->
+    <section id="faqs">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What areas do you provide services to? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">We proudly serve all regions across the Fraser Valley, BC including Surrey, Abbotsford, Chilliwack, Cloverdale, Delta, Hope, Langley, Maple Ridge, and Port Coquitlam.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are your standard business hours? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">We are open Monday through Saturday from 8:00 AM to 8:00 PM. We are closed on Sundays.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer both residential and commercial services? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">Yes! We provide complete plumbing, heating, cooling, drainage, and gas fitting installations and repairs for both homes and industrial commercial properties.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-info">
+                <h4>Contact Information</h4>
+                <p><i class="fa fa-map-marker-alt"></i> Fraser Valley, BC</p>
+                <p><i class="fa fa-phone"></i> +1 (672) 273-0434</p>
+                <p><i class="fa fa-envelope"></i> info@fraservalleyplumbing.com</p>
+                <p><i class="fa fa-clock"></i> Mon-Sat: 8am-8pm | Sun: Closed</p>
+            </div>
+            <div class="footer-col">
+                <h4>Our Commitment</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Delivering unmatched craftsmanship, responsive customer care, and sustainable plumbing mechanics solutions throughout the local regional valleys.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Fraser Valley Plumbing. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- FLOATING QUICK CONNECT BUTTONS -->
+    <div class="floating-buttons">
+        <a href="tel:+16722730434" class="float-btn float-phone" title="Call Us Now">
+            <i class="fa fa-phone"></i>
+        </a>
+        <a href="https://wa.me/16722730434" target="_blank" class="float-btn float-wa" title="WhatsApp Chat">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- FAQ INTERACTIVE JAVASCRIPT -->
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                if(answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
